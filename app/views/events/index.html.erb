@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h1 class="display-1 mx-auto" style="width: 200px;"><b>Eventbrite</b></h1>
+  <div><h1>Plateforme d'organisation et de planification gratuite pour votre événement privé, public </h1></div>
+  <%= button_to "Create an Event", new_event_path, :method => "get", class:'btn btn-primary btn-lg btn-block mt-5' %>
+
+</div>
+<% if flash[:danger] %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <h3><%= flash[:danger] %></h3>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+<% end %>
+
+
+<div class ="container" style="padding-top: 5rem;">
+
+
+<div class="card-columns">
+  <% @events.each do |event|%>
+    <div class="card" style="max-width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> Title : <%= event.title %></h5> 
+        <p class="card-text"><small class="text-muted"> Author <%= event.user.first_name %></small></p>
+        <%= link_to "voir l'event", event_path(event.id), class:"btn btn-primary" %>
+        <a href="<%=  event_path(event.id) %>" class="btn btn-danger"  data-confirm="Etes-vous surs de vouloir supprimer le event ?" data-method="DELETE"> Supprimer </a>
+      </div>
+    </div>
+  <% end %>
+</div>
