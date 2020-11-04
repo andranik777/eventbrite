@@ -1,43 +1,45 @@
+<div class="panel panel-default mt-5">
+  <div class="panel-heading mb-3"><h2>Créer un nouvel événement <h2></div>
+  <div class="panel-body">
+    <%= form_tag events_path(action: 'create'), method: "post" do %>
+      <div class="form-group">
+      <%= label_tag :title, 'Titre', class:'col-md-1 control-label' %>
+      <%= text_field_tag 'title', @event.title , class:'col-md-4 control-label'%>
+      </div>
+      <div class="form-group">
+      <%= label_tag :start_date,'Date', class:'col-md-1 control-label' %>
+      <%= datetime_field_tag 'start_date', @event.start_date , class:'col-md-4 control-label'%>
+      </div>
 
-<h1> Créer un nouvel événement ! </h1>
+      <div class="form-group">
+      <%= label_tag :description, 'Description' , class:'col-md-1 control-label' %>
+      <%= text_area_tag 'description', @event.description , class:'col-md-4 control-label'%>
+      </div>
+    <div class="form-group">
 
+      <%= label_tag :duration, "Durée de l'event" , class:'col-md-1 control-label'%>
+      <%= text_field_tag 'duration', @event.duration , class:'col-md-4 control-label'%>
+      </div>
+      <div class="form-group">
 
-<!-- ... -->
+      <%= label_tag :price , "Prix pour  d'entrée" , class:'col-md-1 control-label'%>
+      <%= text_field_tag 'price', @event.price , class:'col-md-4 control-label'%>
+      </div>
+    <div class="form-group">
 
-<form>
-  <div class="form-group">
+      <%= label_tag :location, "Lieu de l'Event" , class:'col-md-1 control-label'%>
+      <%= text_field_tag 'location', @event.location , class:'col-md-4 control-label'%>
+      </div>
+      
+      <div class="form-group">
+    <div class="col-md-offset-4 col-md-6">
 
-<%= form_tag events_path(action: 'create'), method: "post" do %>
+      <%= submit_tag "Créer l'event", class: 'btn btn-primary' %>
 
-  <%= label_tag 'Titre' %>
-  <%= text_field_tag 'title', @event.title %>
-  <br /> <br />
-
-  <%= label_tag 'QuDateand' %>
-  <%= datetime_field_tag 'start_date', @event.start_date %>
-  <br /> <br />
-
-  <%= label_tag 'Description' %>
-  <%= text_area_tag 'description', @event.description %>
-  <br /> <br />
-
-  <%= label_tag 'Durée' %>
-  <%= text_field_tag 'duration', @event.duration %>
-  <br /> <br />
-  
-  <%= label_tag 'Prix pour 1 entrée' %>
-  <%= text_field_tag 'price', @event.price %>
-  <br /> <br />
-
-  <%= label_tag 'Où ça ?' %>
-  <%= text_field_tag 'location', @event.location %>
-  <br /> <br />
-
-  <%= submit_tag "Create Gossip", class: 'btn btn-primary' %>
-
-<% end %>
+    <% end %>
+    </div>
+    </div>
+</div>
 
 </div>
-</form>
 
-<!-- ... -->
