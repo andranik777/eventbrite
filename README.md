@@ -9,7 +9,3 @@ Le créateur (son email suffira)
 Sa date de début, et sa date de fin (la date de fin est une méthode d'instance)
 Le lieu de l'événement
 Son prix
-
-
-
-my heroku's webpage : https://brite-even.herokuapp.com/
